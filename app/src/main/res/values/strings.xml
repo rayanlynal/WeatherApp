@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Exercise</string>
+    <string name="textview">TextView</string>
+    <string name="_12_deg">12 Deg</string>
+    <string name="georgia_us">Georgia, US</string>
+    <string name="wind">Wind</string>
+    <string name="cloud">cloud</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="last_updated">Last Updated</string>
+    <string name="change_city">Change City</string>
+    <string name="button">Change City</string>
+
+</resources>
