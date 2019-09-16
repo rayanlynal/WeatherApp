@@ -25,7 +25,7 @@ public class WeatherHttpClient {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line = null;
 
-            while((line = bufferedReader.readLine()) != null){
+            while ((line = bufferedReader.readLine()) != null) {
                 stringBuffer.append(line + "\r\n");
             }
 

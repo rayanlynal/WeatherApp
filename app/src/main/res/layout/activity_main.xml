@@ -1,138 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#008577"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
 
-    <TextView
-        android:id="@+id/cityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"
-        android:text="@string/georgia_us"
-        android:textColor="#D81B60"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <variable
+            name="busy"
+            type="androidx.databinding.ObservableBoolean" />
+    </data>
 
-    <ImageView
-        android:id="@+id/thumbnailIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/cityText"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
-        android:background="#fff" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#008577">
 
-    <TextView
-        android:id="@+id/tempText"
-        android:text="@string/_12_deg"
-        android:textStyle="normal"
-        android:textColor="#fff"
-        android:layout_below="@+id/cityText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:textSize="42sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
+            android:text="@string/georgia_us"
+            android:textColor="#D81B60"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/windText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/thumbnailIcon"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="35dp"
-        android:text="@string/wind"
-        android:textColor="#fff"
-        android:textSize="16sp" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbnailIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/cityText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:background="#fff" />
 
-    <TextView
-        android:id="@+id/cloudText"
-        android:text="@string/cloud"
-        android:layout_below="@+id/windText"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textSize="16sp"
-        android:textColor="#fff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tempText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cityText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="@string/_12_deg"
+            android:textColor="#fff"
+            android:textSize="42sp"
+            android:textStyle="normal" />
 
-    <TextView
-        android:id="@+id/pressureText"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#fff"
-        android:text="@string/pressure"
-        android:layout_below="@+id/cloudText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/windText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thumbnailIcon"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/wind"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/humidText"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#fff"
-        android:text="@string/humidity"
-        android:layout_below="@+id/pressureText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cloudText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/windText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/cloud"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/riseText"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#fff"
-        android:text="@string/sunrise"
-        android:layout_below="@+id/humidText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pressureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cloudText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/pressure"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/setText"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#fff"
-        android:text="@string/sunset"
-        android:layout_below="@+id/riseText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/humidText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pressureText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/humidity"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/updateText"
-        android:textSize="16sp"
-        android:layout_marginTop="5dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="#fff"
-        android:text="@string/last_updated"
-        android:layout_below="@+id/setText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/riseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/humidText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/sunrise"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button"
-        android:layout_below="@+id/updateText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/setText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/riseText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/sunset"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/updateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/setText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/last_updated"
+            android:textColor="#fff"
+            android:textSize="16sp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/updateText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/button" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{busy ? View.VISIBLE : View.GONE}" />
 
-
-
-
-
-
+    </RelativeLayout>
+</layout>

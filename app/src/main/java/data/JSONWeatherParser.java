@@ -1,6 +1,5 @@
 package data;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -11,7 +10,7 @@ import util.Utils;
 public class JSONWeatherParser {
     Weather weather = new Weather();
 
-    public static Weather getWeather(String data){
+    public static Weather getWeather(String data) {
         try {
             JSONObject jsonObject = new JSONObject(data);
             Place place = new Place();
@@ -46,7 +45,7 @@ public class JSONWeatherParser {
 
             return weather;*/
 
-        } catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         return null;

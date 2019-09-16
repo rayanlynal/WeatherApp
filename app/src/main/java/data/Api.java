@@ -12,5 +12,5 @@ public interface Api {
     @GET("account")
     Call<List<Weather>> getWeather();
 
-    }
+}
 
