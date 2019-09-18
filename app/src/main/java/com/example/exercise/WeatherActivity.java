@@ -16,7 +16,7 @@ import util.Utils;
 public class WeatherActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    protected ObservableBoolean busy = new ObservableBoolean();
+    protected ObservableBoolean busy = new ObservableBoolean(false);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,18 +38,18 @@ public class WeatherActivity extends AppCompatActivity {
 
     private void callChangePasswordApi() {
         busy.set(true);
-        Repository.getInstance().callWeatherAPI("", "")
-                .observe(this, basicResponse -> {
+        Repository.getInstance().callWeatherAPI()
+                .observe(this, weatherMainModelResponse -> {
                     busy.set(false);
                     try {
-                        /*if (basicResponse != null && basicResponse.isSuccessful()) {
-                         *//*Toast.makeText(this, basicResponse.body().getMessage(), Toast.LENGTH_SHORT).show();*//*
-                            onBackPressed();
+                        if (weatherMainModelResponse != null && weatherMainModelResponse.isSuccessful()) {
+                            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
                         } else {
-                            if (basicResponse.errorBody() != null) {
-                                *//*Toast.makeText(this, basicResponse.body().getMessage(), Toast.LENGTH_SHORT).show();*//*
+                            if (weatherMainModelResponse.errorBody() != null) {
+                                Toast.makeText(WeatherActivity.this, weatherMainModelResponse.errorBody().string()
+                                        , Toast.LENGTH_SHORT).show();
                             }
-                        }*/
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

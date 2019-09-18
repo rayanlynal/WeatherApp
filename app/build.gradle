@@ -43,7 +43,7 @@ dependencies {
 
     //Api calling with Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
     //okhttp logging interceptor for retrofit
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'

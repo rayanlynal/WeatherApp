@@ -3,6 +3,7 @@ package remote;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import beans.WeatherMainModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,20 +22,25 @@ public class Repository {
         return instance;
     }
 
-    public LiveData<Object> callWeatherAPI(String currentPassword, String newPassword) {
-        MutableLiveData<Object> changePassword = new MutableLiveData<>();
-        RemoteAPI.createService(ApiList.class, false).loginUser("", "")
-                .enqueue(new Callback<Response>() {
-                    @Override
-                    public void onResponse(Call<Response> call, Response<Response> response) {
-                        changePassword.setValue(response);
-                    }
+    public LiveData<Response<WeatherMainModel>> callWeatherAPI() {
+        MutableLiveData<Response<WeatherMainModel>> weatherModel = new MutableLiveData<>();
 
-                    @Override
-                    public void onFailure(Call<Response> call, Throwable t) {
-                        changePassword.setValue(null);
-                    }
-                });
-        return changePassword;
+        RemoteAPI.createService(ApiList.class)
+                .callWeatherAPI("4fcf0d2ae5be0c28c6db9099bc8b692c", "37.8267,-122.4233")
+                .enqueue(new Callback<WeatherMainModel>() {
+                             @Override
+                             public void onResponse(Call<WeatherMainModel> call, Response<WeatherMainModel> response) {
+                                 weatherModel.setValue(response);
+                             }
+
+                             @Override
+                             public void onFailure(Call<WeatherMainModel> call, Throwable t) {
+                                 weatherModel.setValue(null);
+                                 t.printStackTrace();
+                             }
+                         }
+                );
+        return weatherModel;
     }
+
 }
