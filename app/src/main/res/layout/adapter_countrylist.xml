@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="countryModel"
+            type="beans.CountryModel" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="listener"
+            type="adapter.CountryListAdapter.OnCountryClick" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:onClick="@{(view) -> listener.onCountyClick(index)}"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUSA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:fontFamily="@font/medium"
+            android:text="@{countryModel.countryName}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="California" />
+
+        <include layout="@layout/include_divider" />
+    </LinearLayout>
+</layout>

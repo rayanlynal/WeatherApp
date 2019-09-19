@@ -3,7 +3,7 @@ package beans;
 
 import com.google.gson.annotations.Expose;
 
-public class Datum {
+public class DailyData {
 
     @Expose
     private Double apparentTemperature;

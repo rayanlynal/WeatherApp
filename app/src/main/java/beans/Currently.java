@@ -22,9 +22,9 @@ public class Currently {
     @Expose
     private Double ozone;
     @Expose
-    private Long precipIntensity;
+    private Double precipIntensity;
     @Expose
-    private Long precipProbability;
+    private Double precipProbability;
     @Expose
     private Double pressure;
     @Expose
@@ -108,20 +108,12 @@ public class Currently {
         this.ozone = ozone;
     }
 
-    public Long getPrecipIntensity() {
+    public Double getPrecipIntensity() {
         return precipIntensity;
     }
 
-    public void setPrecipIntensity(Long precipIntensity) {
+    public void setPrecipIntensity(Double precipIntensity) {
         this.precipIntensity = precipIntensity;
-    }
-
-    public Long getPrecipProbability() {
-        return precipProbability;
-    }
-
-    public void setPrecipProbability(Long precipProbability) {
-        this.precipProbability = precipProbability;
     }
 
     public Double getPressure() {
@@ -196,4 +188,11 @@ public class Currently {
         this.windSpeed = windSpeed;
     }
 
+    public Double getPrecipProbability() {
+        return precipProbability;
+    }
+
+    public void setPrecipProbability(Double precipProbability) {
+        this.precipProbability = precipProbability;
+    }
 }

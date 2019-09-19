@@ -1,4 +1,4 @@
-package com.example.exercise;
+package roomdb;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

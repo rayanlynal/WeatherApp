@@ -1,4 +1,4 @@
-package com.example.exercise;
+package roomdb;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

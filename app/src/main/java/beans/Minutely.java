@@ -8,17 +8,17 @@ import java.util.List;
 public class Minutely {
 
     @Expose
-    private List<Datum> data;
+    private List<DailyData> data;
     @Expose
     private String icon;
     @Expose
     private String summary;
 
-    public List<Datum> getData() {
+    public List<DailyData> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<DailyData> data) {
         this.data = data;
     }
 

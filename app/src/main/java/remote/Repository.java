@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class Repository {
     private static Repository instance;
 
@@ -22,11 +23,11 @@ public class Repository {
         return instance;
     }
 
-    public LiveData<Response<WeatherMainModel>> callWeatherAPI() {
+    public LiveData<Response<WeatherMainModel>> callWeatherAPI(String latlng) {
         MutableLiveData<Response<WeatherMainModel>> weatherModel = new MutableLiveData<>();
 
         RemoteAPI.createService(ApiList.class)
-                .callWeatherAPI("4fcf0d2ae5be0c28c6db9099bc8b692c", "37.8267,-122.4233")
+                .callWeatherAPI("4fcf0d2ae5be0c28c6db9099bc8b692c", latlng /*"37.8267,-122.4233"*/)
                 .enqueue(new Callback<WeatherMainModel>() {
                              @Override
                              public void onResponse(Call<WeatherMainModel> call, Response<WeatherMainModel> response) {
